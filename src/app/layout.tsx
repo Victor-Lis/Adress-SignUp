@@ -22,7 +22,8 @@ export default function RootLayout({
     <html lang="pt-BR">
       <body className={`bg-zinc-900`}>
         <AuthProvider>
-            {children}
+          <Header/>
+          {children}
         </AuthProvider>
       </body>
     </html>
