@@ -40,7 +40,7 @@ export default function Header() {
         )}
 
         {status === "authenticated" && (
-          <div className="flex gap-x-4 items-baseline">
+          <div className="flex gap-x-4 items-baseline justify-end flex-wrap">
             <Link href={"/adresses"} className="flex justify-center items-center hover:scale-110 duration-300 cursor-pointer">
               <FaHome size={24} color="rgb(24,24,27)" />
               <h3 className="ml-1">Endereços</h3>
