@@ -22,7 +22,7 @@ export default function Header() {
         <Link href={"/"}>
           <h1 className="font-bold text-2x1 hover:tracking-widest duration-300 text-zinc-900">
             Adress
-            <span className="text-purple-700"> SignUp</span>
+            <span className="text-blue-600"> SignUp</span>
           </h1>
         </Link>
 
@@ -42,7 +42,7 @@ export default function Header() {
         {status === "authenticated" && (
           <div className="flex gap-x-4 items-baseline justify-end flex-wrap">
             <Link href={"/adresses"} className="flex justify-center items-center hover:scale-110 duration-300 cursor-pointer">
-              <FaHome size={24} color="rgb(24,24,27)" />
+              <FaHome size={24} color="#2563eb" />
               <h3 className="ml-1">Endereços</h3>
             </Link>
 
