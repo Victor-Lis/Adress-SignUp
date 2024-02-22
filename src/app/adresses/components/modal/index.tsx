@@ -13,7 +13,7 @@ export default function Modal(
   }
 ) {
 
-  const {  } = useContext(ModalContext)
+  const { hasAdress } = useContext(ModalContext)
 
   const modalRef = useRef<HTMLDivElement | null>(null);
 
@@ -33,8 +33,8 @@ export default function Modal(
           className="bg-white shadow-lg w-4/5 md:w-1/2 max-w-2xl p-3 rounded"
           ref={modalRef}
         > 
-          {/* {!hasAluno && <CreateForm toggleModal={toggleModal}/>} */}
-          {/* {hasAluno && <EditForm toggleModal={toggleModal}/>} */}
+          {!hasAdress && <CreateForm toggleModal={toggleModal}/>}
+          {hasAdress && <EditForm toggleModal={toggleModal}/>}
         </div>
       </div>
     </div>

@@ -5,15 +5,27 @@ import Modal from "../components/modal";
 interface ModalContextData {
   visible: boolean;
   handleModalVisible: () => void;
+  adress: AdressType | null | undefined;
+  handleSetAdress: (a: AdressType) => void;
+  hasAdress: boolean;
 }
 
 export const ModalContext = createContext({} as ModalContextData);
 
 export const ModalProvider = ({ children }: { children: ReactNode }) => {
   const [visible, setVisible] = useState(false);
+  const [adress, setAdress] = useState<AdressType | null>()
 
   function handleModalVisible() {
     setVisible(!visible);
+  }
+
+  function handleSetAdress(a: AdressType){
+    setAdress(a)
+  }
+
+  function handleClearAdress(){
+    setAdress(null)
   }
 
   useEffect(() => {
@@ -28,6 +40,9 @@ export const ModalProvider = ({ children }: { children: ReactNode }) => {
       value={{
         visible,
         handleModalVisible,
+        adress,
+        handleSetAdress,
+        hasAdress: !!adress,
       }}
     >
       {visible && <Modal toggleModal={handleModalVisible} />}
