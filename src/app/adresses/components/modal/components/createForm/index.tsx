@@ -12,6 +12,36 @@ export default function CreateForm({
   const [email, setEmail] = useState<string>("");
   const [nome, setNome] = useState<string>("");
 
+  const estados = [
+    "AC",
+    "AL",
+    "AP",
+    "AM",
+    "BA",
+    "CE",
+    "DF",
+    "ES",
+    "GO",
+    "MA",
+    "MT",
+    "MS",
+    "MG",
+    "PA",
+    "PB",
+    "PR",
+    "PE",
+    "PI",
+    "RJ",
+    "RN",
+    "RS",
+    "RO",
+    "RR",
+    "SC",
+    "SP",
+    "SE",
+    "TO",
+  ];
+
   const route = useRouter();
 
   const [loading, setLoading] = useState(false);
@@ -41,7 +71,77 @@ export default function CreateForm({
         className="flex flex-col justify-center items-center"
         onSubmit={(e) => handleCreateAluno(e)}
       >
-        
+        <div className="flex justify-center items-center my-5">
+          <h2 className="text-2xl text-black mx-2">CEP</h2>
+          <input
+            type="text"
+            className="outline-none bg-slate-100 rounded px-2 py-1"
+          />
+        </div>
+        <div className="flex justify-center items-center my-5">
+          <h2 className="text-2xl text-black mx-2">Logradouro</h2>
+          <input
+            type="text"
+            className="outline-none bg-slate-100 rounded px-2 py-1"
+          />
+        </div>
+        <div className="flex justify-center items-center my-5">
+          <h2 className="text-2xl text-black mx-2">Complemento</h2>
+          <input
+            type="text"
+            className="outline-none bg-slate-100 rounded px-2 py-1"
+          />
+        </div>
+        <div className="flex justify-center items-center my-5">
+          <h2 className="text-2xl text-black mx-2">Bairro</h2>
+          <input
+            type="text"
+            className="outline-none bg-slate-100 rounded px-2 py-1"
+          />
+        </div>
+        <div className="flex justify-center items-center my-5">
+          <h2 className="text-2xl text-black mx-2">Localidade</h2>
+          <input
+            type="text"
+            className="outline-none bg-slate-100 rounded px-2 py-1"
+          />
+        </div>
+        <div className="flex justify-center items-center my-5">
+          <h2 className="text-2xl text-black mx-2">UF</h2>
+          <select
+            className="outline-none bg-slate-100 rounded px-2 py-1"
+          >
+            {estados.map((uf) => <option value={uf}>{uf}</option>)}
+          </select>
+        </div>
+        <div className="flex justify-center items-center my-5">
+          <h2 className="text-2xl text-black mx-2">IBGE</h2>
+          <input
+            type="text"
+            className="outline-none bg-slate-100 rounded px-2 py-1"
+          />
+        </div>
+        <div className="flex justify-center items-center my-5">
+          <h2 className="text-2xl text-black mx-2">GIA</h2>
+          <input
+            type="text"
+            className="outline-none bg-slate-100 rounded px-2 py-1"
+          />
+        </div>
+        <div className="flex justify-center items-center my-5">
+          <h2 className="text-2xl text-black mx-2">DDD</h2>
+          <input
+            type="text"
+            className="outline-none bg-slate-100 rounded px-2 py-1"
+          />
+        </div>
+        <div className="flex justify-center items-center my-5">
+          <h2 className="text-2xl text-black mx-2">Siafi</h2>
+          <input
+            type="text"
+            className="outline-none bg-slate-100 rounded px-2 py-1"
+          />
+        </div>
       </form>
     </>
   );
