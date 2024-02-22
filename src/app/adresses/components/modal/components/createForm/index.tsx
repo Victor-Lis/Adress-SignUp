@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useState, FormEvent } from "react";
-import { createAluno, getEmailWithoutSignUp } from "../../utils/functions";
 import { useRouter } from "next/navigation";
 import { FaSpinner } from "react-icons/fa";
 
@@ -9,8 +8,6 @@ export default function CreateForm({
 }: {
   toggleModal: () => void;
 }) {
-  const [email, setEmail] = useState<string>("");
-  const [nome, setNome] = useState<string>("");
 
   const estados = [
     "AC",
@@ -48,19 +45,6 @@ export default function CreateForm({
 
   async function handleCreateAluno(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-
-    if (!!nome && !!email) {
-      setLoading(true);
-      let novoAluno = await createAluno({
-        nome,
-        email,
-      });
-
-      if (novoAluno) {
-        route.refresh();
-        toggleModal();
-      }
-    }
     setLoading(false);
   }
 
@@ -69,7 +53,7 @@ export default function CreateForm({
       <h2 className="text-green-500 text-2xl w-full">Cadastrar Endereço</h2>
       <form
         className="flex flex-col justify-center items-center"
-        onSubmit={(e) => handleCreateAluno(e)}
+        onSubmit={(e) => {}}
       >
         <div className="flex justify-center items-center my-5">
           <h2 className="text-2xl text-black mx-2">CEP</h2>
