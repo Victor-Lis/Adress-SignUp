@@ -57,7 +57,29 @@ export default function CreateForm({
     setLoading(false);
   }
 
+  async function getAPIDatasByCEP(cep: string) {
+    const url = `https://viacep.com.br/ws/${cep}/json/`
+    const data: AdressType | null = await fetch(url)
+    .then((res) => res.json())
+    .catch(e => console.log(e))
 
+    if(data){
+      setLogradouro(data.logradouro)
+      setLocalidade(data.localidade)
+      setUF(data.uf)
+
+      setBairro(data.bairro as string)
+      setSiafi(data.siafi as string)
+      setIbge(data.ibge as string)
+      setDDD(data.ddd as string)
+    }
+  }
+
+  useEffect(() => {
+    if (CEP.length === 8 || CEP.length === 9) {
+      getAPIDatasByCEP(CEP);
+    }
+  }, [CEP]);
 
   return (
     <>
