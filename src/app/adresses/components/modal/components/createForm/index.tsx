@@ -39,6 +39,7 @@ export default function CreateForm({
   ];
 
   const [CEP, setCEP] = useState<string>("");
+
   const [logradouro, setLogradouro] = useState<string>("");
   const [localidade, setLocalidade] = useState<string>("");
   const [UF, setUF] = useState<string>("");
@@ -64,6 +65,7 @@ export default function CreateForm({
     .catch(e => console.log(e))
 
     if(data){
+      setCEP(data.cep as string)
       setLogradouro(data.logradouro)
       setLocalidade(data.localidade)
       setUF(data.uf)
@@ -75,11 +77,39 @@ export default function CreateForm({
     }
   }
 
+  const isEnabledToSearch = () => logradouro?.length && localidade?.length && UF?.length
+
+  async function getAPICEPByAdress(){
+    if(isEnabledToSearch()){
+      const url = `https://viacep.com.br/ws/${UF}/${localidade}/${logradouro}/json/`
+      const datas: AdressType[] | null = await fetch(url)
+      .then((res) => res.json())
+      .catch(e => console.log(e))
+      
+      
+      if(datas?.length){
+        setCEP(datas[0].cep as string)
+        setLogradouro(datas[0].logradouro)
+        setLocalidade(datas[0].localidade)
+        setUF(datas[0].uf)
+  
+        setBairro(datas[0].bairro as string)
+        setSiafi(datas[0].siafi as string)
+        setIbge(datas[0].ibge as string)
+        setDDD(datas[0].ddd as string)
+      }
+    }
+  }
+
   useEffect(() => {
     if (CEP.length === 8 || CEP.length === 9) {
       getAPIDatasByCEP(CEP);
     }
   }, [CEP]);
+
+  useEffect(() => {
+    getAPICEPByAdress()
+  }, [UF, logradouro, localidade]);
 
   return (
     <>
@@ -112,6 +142,10 @@ export default function CreateForm({
               className="outline-none bg-slate-100 rounded px-2 py-1"
               required
               value={logradouro}
+              onChange={(e) => {
+                getAPICEPByAdress()
+                setLogradouro(e.target.value)
+              }}
             />
           </div>
           <div className="flex justify-center items-center my-1 flex-wrap flex-1">
@@ -123,11 +157,18 @@ export default function CreateForm({
               className="outline-none bg-slate-100 rounded px-2 py-1"
               required
               value={localidade}
+              onChange={(e) => {
+                getAPICEPByAdress()
+                setLocalidade(e.target.value)
+              }}
             />
           </div>
           <div className="flex flex-col justify-center items-center my-1 flex-wrap flex-1">
             <h2 className="text-2xl text-black mx-2">UF</h2>
-            <select className="outline-none bg-slate-100 rounded px-2 py-1" onChange={(e) => setUF(e.target.value)}>
+            <select className="outline-none bg-slate-100 rounded px-2 py-1" onChange={(e) => {
+              getAPICEPByAdress()
+              setUF(e.target.value)
+            }}>
               <option value={UF}>{UF}</option>
               {estados.map((uf) => {
                 if(uf !== UF) return <option key={uf} value={uf}>{uf}</option>
