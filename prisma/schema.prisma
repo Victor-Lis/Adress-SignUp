@@ -62,7 +62,6 @@ model Endereco{
   logradouro String
   localidade String
   uf String
-  complemento String?
   bairro String?
   ibge String?
   gia String?
