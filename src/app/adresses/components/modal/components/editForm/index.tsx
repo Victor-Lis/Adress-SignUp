@@ -69,20 +69,6 @@ export default function UpdateForm({
           />
         </div>
         <div className="flex justify-center items-center my-5">
-          <h2 className="text-2xl text-black mx-2">Complemento</h2>
-          <input
-            type="text"
-            className="outline-none bg-slate-100 rounded px-2 py-1"
-          />
-        </div>
-        <div className="flex justify-center items-center my-5">
-          <h2 className="text-2xl text-black mx-2">Bairro</h2>
-          <input
-            type="text"
-            className="outline-none bg-slate-100 rounded px-2 py-1"
-          />
-        </div>
-        <div className="flex justify-center items-center my-5">
           <h2 className="text-2xl text-black mx-2">Localidade</h2>
           <input
             type="text"
@@ -96,6 +82,20 @@ export default function UpdateForm({
               <option value={uf}>{uf}</option>
             ))}
           </select>
+        </div>
+        <div className="flex justify-center items-center my-5">
+          <h2 className="text-2xl text-black mx-2">Complemento</h2>
+          <input
+            type="text"
+            className="outline-none bg-slate-100 rounded px-2 py-1"
+          />
+        </div>
+        <div className="flex justify-center items-center my-5">
+          <h2 className="text-2xl text-black mx-2">Bairro</h2>
+          <input
+            type="text"
+            className="outline-none bg-slate-100 rounded px-2 py-1"
+          />
         </div>
         <div className="flex justify-center items-center my-5">
           <h2 className="text-2xl text-black mx-2">IBGE</h2>
@@ -125,6 +125,7 @@ export default function UpdateForm({
             className="outline-none bg-slate-100 rounded px-2 py-1"
           />
         </div>
+        <button>Cadastrar</button>
       </form>
     </>
   );

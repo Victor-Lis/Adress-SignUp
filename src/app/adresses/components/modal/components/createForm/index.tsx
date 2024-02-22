@@ -8,7 +8,6 @@ export default function CreateForm({
 }: {
   toggleModal: () => void;
 }) {
-
   const estados = [
     "AC",
     "AL",
@@ -43,7 +42,7 @@ export default function CreateForm({
 
   const [loading, setLoading] = useState(false);
 
-  async function handleCreateAluno(e: FormEvent<HTMLFormElement>) {
+  async function handleCreateAdress(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setLoading(false);
   }
@@ -53,79 +52,50 @@ export default function CreateForm({
       <h2 className="text-green-500 text-2xl w-full">Cadastrar Endereço</h2>
       <form
         className="flex flex-col justify-center items-center"
-        onSubmit={(e) => {}}
+        onSubmit={(e) => handleCreateAdress(e)}
       >
-        <div className="flex justify-center items-center my-5">
-          <h2 className="text-2xl text-black mx-2">CEP</h2>
-          <input
-            type="text"
-            className="outline-none bg-slate-100 rounded px-2 py-1"
-          />
+        <div className="flex justify-around items-center w-full flex-wrap my-2">
+          <div className="flex justify-center items-center my-1 flex-wrap flex-1">
+            <h2 className="text-2xl text-black mx-2">CEP</h2>
+            <input
+              type="text"
+              className="outline-none bg-slate-100 rounded px-2 py-1"
+            />
+          </div>
+          <div className="flex justify-center items-center my-1 flex-wrap flex-1">
+            <h2 className="text-2xl text-black mx-2">Logradouro</h2>
+            <input
+              type="text"
+              className="outline-none bg-slate-100 rounded px-2 py-1"
+            />
+          </div>
+          <div className="flex justify-center items-center my-1 flex-wrap flex-1">
+            <h2 className="text-2xl text-black mx-2">Localidade</h2>
+            <input
+              type="text"
+              className="outline-none bg-slate-100 rounded px-2 py-1"
+            />
+          </div>
+          <div className="flex flex-col justify-center items-center my-1 flex-wrap flex-1">
+            <h2 className="text-2xl text-black mx-2">UF</h2>
+            <select className="outline-none bg-slate-100 rounded px-2 py-1">
+              {estados.map((uf) => (
+                <option value={uf}>{uf}</option>
+              ))}
+            </select>
+          </div>
         </div>
-        <div className="flex justify-center items-center my-5">
-          <h2 className="text-2xl text-black mx-2">Logradouro</h2>
-          <input
-            type="text"
-            className="outline-none bg-slate-100 rounded px-2 py-1"
-          />
+        <div className="flex justify-around items-center w-full flex-wrap my-2">
+          <h2 className="my-2 mx-3 text-center flex-1"><strong>Bairro:</strong> aaaaaaaaaaaaaa</h2>
+          <h2 className="my-2 mx-3 text-center flex-1"><strong>IBGE:</strong> aaaaaaaaaaaaaa</h2>
+          <h2 className="my-2 mx-3 text-center flex-1"><strong>SIAFI:</strong> aaaaaaaaaaaaaa</h2>
+          <h2 className="my-2 mx-3 text-center flex-1"><strong>DDD:</strong> aaaaaaaaaaaaaa</h2>
         </div>
-        <div className="flex justify-center items-center my-5">
-          <h2 className="text-2xl text-black mx-2">Complemento</h2>
-          <input
-            type="text"
-            className="outline-none bg-slate-100 rounded px-2 py-1"
-          />
-        </div>
-        <div className="flex justify-center items-center my-5">
-          <h2 className="text-2xl text-black mx-2">Bairro</h2>
-          <input
-            type="text"
-            className="outline-none bg-slate-100 rounded px-2 py-1"
-          />
-        </div>
-        <div className="flex justify-center items-center my-5">
-          <h2 className="text-2xl text-black mx-2">Localidade</h2>
-          <input
-            type="text"
-            className="outline-none bg-slate-100 rounded px-2 py-1"
-          />
-        </div>
-        <div className="flex justify-center items-center my-5">
-          <h2 className="text-2xl text-black mx-2">UF</h2>
-          <select
-            className="outline-none bg-slate-100 rounded px-2 py-1"
-          >
-            {estados.map((uf) => <option value={uf}>{uf}</option>)}
-          </select>
-        </div>
-        <div className="flex justify-center items-center my-5">
-          <h2 className="text-2xl text-black mx-2">IBGE</h2>
-          <input
-            type="text"
-            className="outline-none bg-slate-100 rounded px-2 py-1"
-          />
-        </div>
-        <div className="flex justify-center items-center my-5">
-          <h2 className="text-2xl text-black mx-2">GIA</h2>
-          <input
-            type="text"
-            className="outline-none bg-slate-100 rounded px-2 py-1"
-          />
-        </div>
-        <div className="flex justify-center items-center my-5">
-          <h2 className="text-2xl text-black mx-2">DDD</h2>
-          <input
-            type="text"
-            className="outline-none bg-slate-100 rounded px-2 py-1"
-          />
-        </div>
-        <div className="flex justify-center items-center my-5">
-          <h2 className="text-2xl text-black mx-2">Siafi</h2>
-          <input
-            type="text"
-            className="outline-none bg-slate-100 rounded px-2 py-1"
-          />
-        </div>
+        <button
+          className="px-5 py-2 bg-green-500 font-bold text-white rounded
+          hover:scale-105 duration-300
+          "
+        >Cadastrar</button>
       </form>
     </>
   );
