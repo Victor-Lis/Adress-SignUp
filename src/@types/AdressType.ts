@@ -9,5 +9,4 @@ type AdressType = {
   gia?: string;
   ddd?: string;
   siafi?: string;
-  id?: string;
 };

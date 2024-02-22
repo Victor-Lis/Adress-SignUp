@@ -45,6 +45,8 @@ model User {
   image         String?
   accounts      Account[]
   sessions      Session[]
+  
+  enderecos Endereco[]
 }
 
 model VerificationToken {
@@ -53,4 +55,20 @@ model VerificationToken {
   expires    DateTime
 
   @@unique([identifier, token])
+}
+
+model Endereco{
+  cep String @id 
+  logradouro String
+  localidade String
+  uf String
+  complemento String?
+  bairro String?
+  ibge String?
+  gia String?
+  ddd String?
+  siafi String?
+
+  user_id String
+  user User? @relation(fields: [user_id], references: [id], onDelete: Cascade)
 }
