@@ -1,4 +1,5 @@
 import Header from "./components/header";
+import ContentContainer from "./components/contentContainer";
 import { authOptions } from '@/lib/auth'
 import { getServerSession } from 'next-auth'
 import { ModalProvider } from "./providers/modalProvider";
@@ -15,6 +16,7 @@ export default async function Adresses() {
     <ModalProvider>
       <main className="flex flex-col justify-start min-h-[calc(100vh-90px)] bg-zinc-900">
         <Header />
+        <ContentContainer />
       </main>
     </ModalProvider>
   );
