@@ -64,7 +64,6 @@ model Endereco{
   uf String
   bairro String?
   ibge String?
-  gia String?
   ddd String?
   siafi String?
 
