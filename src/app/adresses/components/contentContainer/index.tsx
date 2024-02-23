@@ -20,7 +20,7 @@ export default async function contentContainer() {
       },
     })
  return (
-   <div className="w-9/12 mx-auto mt-7 mb-5 grid grid-cols-2 gap-x-5 gap-y-2">
+   <div className="w-9/12 mx-auto mt-4 mb-5 grid grid-cols-2 gap-x-5 gap-y-2">
     {enderecos.map((adress) => {
         return <AdressCard key={adress.cep} adress={adress as AdressType}/>
     })}
