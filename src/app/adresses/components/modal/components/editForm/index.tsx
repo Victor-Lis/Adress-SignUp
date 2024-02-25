@@ -91,7 +91,7 @@ export default function EditForm({
             <h2 className="text-2xl text-black mx-2">UF</h2>
             <select className="outline-none bg-slate-100 rounded px-2 py-1">
               {estados.map((uf) => (
-                <option value={uf}>{uf}</option>
+                <option key={uf} value={uf}>{uf}</option>
               ))}
             </select>
           </div>
