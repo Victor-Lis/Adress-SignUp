@@ -1,11 +1,15 @@
 import { AdressType } from "@/@types/AdressType";
+import Link from "next/link";
 
 export default function adressCard({ adress }: { adress: AdressType }) {
   return (
-    <div className="
-        bg-slate-200 flex flex-col px-3 py-2 rounded
+    <Link 
+      className="
+        bg-white flex flex-col px-3 py-2 rounded
         hover:scale-105 duration-300 cursor-pointer
-    ">
+      "
+      href={`/adresses/adress/${adress.uid}`}
+    >
       <h2 className="flex text-3xl text-blue-600 mb-2">CEP {adress.cep}</h2>
       <div className="flex flex-row justify-around items-center">
         <div className="flex flex-col items-center justify-center">
@@ -21,6 +25,6 @@ export default function adressCard({ adress }: { adress: AdressType }) {
           <h4 className="text-center">{adress.uf}</h4>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
