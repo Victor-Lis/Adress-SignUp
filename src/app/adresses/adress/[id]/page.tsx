@@ -32,18 +32,6 @@ export default async function Adress({ params }: { params: Params }) {
       redirect("/adresses");
     });
 
-  async function deleteAdress(id: string){
-    await prisma.endereco.delete({
-      where: {
-        uid: id,
-      }
-    })
-    .then(() => { 
-      redirect("/adresses")
-    })
-    .catch((e) => console.log(e))
-  }
-
   return (
     <main className="w-full flex flex-col justify-start min-h-[calc(100vh-90px)] bg-zinc-900">
       <div className="w-11/12 mx-auto p-5">
@@ -59,6 +47,7 @@ export default async function Adress({ params }: { params: Params }) {
           <h3 className="bg-white m-2 text-center p-2 rounded"><strong>IBGE </strong>{adress.ibge}</h3>
           <h3 className="bg-white m-2 text-center p-2 rounded"><strong>SIAFI </strong>{adress.siafi}</h3>
         </div>
+        <Button id={params.id}/>
       </div>
     </main>
   );
