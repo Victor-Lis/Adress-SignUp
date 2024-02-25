@@ -1,6 +1,7 @@
 "use client";
 import { createContext, ReactNode, useEffect, useState } from "react";
 import Modal from "../components/modal";
+import { AdressType } from "@/@types/AdressType";
 
 interface ModalContextData {
   visible: boolean;
