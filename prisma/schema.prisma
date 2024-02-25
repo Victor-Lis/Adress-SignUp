@@ -58,7 +58,8 @@ model VerificationToken {
 }
 
 model Endereco{
-  cep String @id 
+  uid String @id @default(uuid())
+  cep String  
   logradouro String
   localidade String
   uf String
