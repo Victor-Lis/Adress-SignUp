@@ -7,4 +7,5 @@ export type AdressType = {
   ibge?: string;
   ddd?: string;
   siafi?: string;
+  uid: string;
 };
