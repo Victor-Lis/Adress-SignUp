@@ -5,7 +5,7 @@ export default function adressCard({ adress }: { adress: AdressType }) {
   return (
     <Link 
       className="
-        bg-white flex flex-col px-3 py-2 rounded
+        bg-white flex flex-col px-3 py-2 rounded min-w-72
         hover:scale-105 duration-300 cursor-pointer
       "
       href={`/adresses/adress/${adress.uid}`}
