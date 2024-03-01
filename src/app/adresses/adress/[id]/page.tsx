@@ -38,14 +38,17 @@ export default async function Adress({ params }: { params: Params }) {
         <header className="w-full flex items-center justify-start">
           <h2 className="text-blue-600 text-3xl py-2 px-5 bg-white rounded">{adress.cep}</h2>
         </header>
-        <div className="grid grid-cols-3 mt-5">
-          <h3 className="bg-white m-2 text-center p-2 rounded"><strong>Logradouro </strong>{adress.logradouro}</h3>
-          <h3 className="bg-white m-2 text-center p-2 rounded"><strong>Bairro </strong>{adress.bairro}</h3>
-          <h3 className="bg-white m-2 text-center p-2 rounded"><strong>Localidade </strong>{adress.localidade}</h3>
-          <h3 className="bg-white m-2 text-center p-2 rounded"><strong>Estado </strong>{adress.uf}</h3>
-          <h3 className="bg-white m-2 text-center p-2 rounded"><strong>DDD </strong>{adress.ddd}</h3>
-          <h3 className="bg-white m-2 text-center p-2 rounded"><strong>IBGE </strong>{adress.ibge}</h3>
-          <h3 className="bg-white m-2 text-center p-2 rounded"><strong>SIAFI </strong>{adress.siafi}</h3>
+        <div className="flex justify-center items-center flex-wrap bg-white px-5 py-2 rounded-lg mt-2">
+          <div className="flex flex-col justify-center items-start mt-5 flex-1">
+            <h3 className="text-items-start p-2 rounded"><strong>Logradouro </strong>{adress.logradouro}</h3>
+            <h3 className="text-items-start p-2 rounded"><strong>Bairro </strong>{adress.bairro}</h3>
+            <h3 className="text-items-start p-2 rounded"><strong>Localidade </strong>{adress.localidade}</h3>
+            <h3 className="text-items-start p-2 rounded"><strong>Estado </strong>{adress.uf}</h3>
+            <h3 className="text-items-start p-2 rounded"><strong>DDD </strong>{adress.ddd}</h3>
+            <h3 className="text-items-start p-2 rounded"><strong>IBGE </strong>{adress.ibge}</h3>
+            <h3 className="text-items-start p-2 rounded"><strong>SIAFI </strong>{adress.siafi}</h3>
+          </div>
+          <iframe className="flex-1 h-full min-h-[250px] max-[400px]:hidden" id="gmap_canvas" src="https://maps.google.com/maps?q=636+5th+Ave%2C+New+York&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>  
         </div>
         <Button id={params.id}/>
       </div>
