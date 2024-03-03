@@ -5,7 +5,7 @@ export default function adressCard({ adress }: { adress: AdressType }) {
   return (
     <Link 
       className="
-        bg-white flex flex-col px-3 py-2 rounded min-w-72
+        bg-white flex flex-col px-3 py-2 rounded mx-5 my-2 md:min-w-80
         hover:scale-105 duration-300 cursor-pointer
       "
       href={`/adresses/adress/${adress.uid}`}
@@ -16,7 +16,7 @@ export default function adressCard({ adress }: { adress: AdressType }) {
           <h2 className="text-2xl text-bold">Logradouro</h2> 
           <h4 className="text-center w-full">{adress.logradouro}</h4>
         </div>
-        <div className="flex flex-col items-center justify-center">
+        <div className="flex flex-col items-center justify-center mx-2">
           <h2 className="text-2xl text-bold">Localidade</h2> 
           <h4 className="text-center">{adress.localidade}</h4>
         </div>
