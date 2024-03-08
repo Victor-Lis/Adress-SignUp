@@ -48,7 +48,7 @@ export default async function Adress({ params }: { params: Params }) {
             <h3 className="text-items-start p-2 rounded"><strong>IBGE </strong>{adress.ibge}</h3>
             <h3 className="text-items-start p-2 rounded"><strong>SIAFI </strong>{adress.siafi}</h3>
           </div>
-          <iframe className="flex-1 h-full min-h-[250px] max-[400px]:hidden" id="gmap_canvas" src={`https://maps.google.com/maps?q=${adress.bairro}%2C+${adress.localidade}&t=&z=20&ie=UTF8&iwloc=&output=embed`}></iframe>  
+          <iframe className="flex-1 h-full min-h-[250px] max-[400px]:hidden border-black border-[.25px] border-r-[2px]" id="gmap_canvas" src={`https://maps.google.com/maps?q=${adress.bairro}%2C+${adress.localidade}&t=&z=20&ie=UTF8&iwloc=&output=embed`}></iframe>  
         </div>
         <Button id={params.id}/>
       </div>
