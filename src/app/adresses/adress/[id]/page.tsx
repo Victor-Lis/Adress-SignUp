@@ -35,7 +35,7 @@ export default async function Adress({ params }: { params: Params }) {
 
   async function getWeather({ city }: { city: string }) {
     let data = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.WEATHER_KEY}&lang=pt_br`
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.WEATHER_KEY}&lang=pt_br&units=metric`
     ).then((res) => res.json());
     return data;
   }
@@ -80,6 +80,10 @@ export default async function Adress({ params }: { params: Params }) {
         >
           <div className="flex justify-center items-start mt-5 flex-1">
             <h3 className="text-items-start p-2 rounded"><strong>Descrição </strong>{firstLetterUpperCase(weather?.weather[0].description as string)}</h3>
+            <h3 className="text-items-start p-2 rounded"><strong>Temperatura Mínima </strong>{weather?.main.temp_min as number}°C</h3>
+            <h3 className="text-items-start p-2 rounded"><strong>Temperatura </strong>{weather?.main.temp as number}°C</h3>
+            <h3 className="text-items-start p-2 rounded"><strong>Temperatura Máxima </strong>{weather?.main.temp_max as number}°C</h3>
+            <h3 className="text-items-start p-2 rounded"><strong>Sensação Térmica </strong>{weather?.main.feels_like as number}°C</h3>
           </div>
         </div>
         <Button id={params.id} />
