@@ -18,14 +18,22 @@ export default async function Adress({ params }: { params: Params }) {
     redirect("/");
   }
 
+  let weather;
+
+  async function getWeather({city}:{city: string}){
+    weather = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.WEATHER_KEY}&lang=pt_br`).then((res) => res.json())
+    console.log(weather)
+  }
+
   const adress = await prisma.endereco
     .findFirst({
       where: {
         uid: params.id,
       },
     })
-    .then((endereco) => {
+    .then(async (endereco) => {
       if (!endereco) redirect("/adresses");
+      getWeather({city: endereco.localidade})
       return endereco;
     })
     .catch((e) => {
