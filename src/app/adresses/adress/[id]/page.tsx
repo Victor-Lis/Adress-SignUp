@@ -78,7 +78,7 @@ export default async function Adress({ params }: { params: Params }) {
           style={{ borderBottomLeftRadius: 10, borderBottomRightRadius: 10 }}
           className="flex justify-center items-center flex-wrap bg-white px-5 py-2"
         >
-          <div className="flex justify-center items-start mt-5 flex-1">
+          <div className="flex flex-wrap justify-center items-start mt-5 flex-1">
             <h3 className="text-items-start p-2 rounded"><strong>Descrição </strong>{firstLetterUpperCase(weather?.weather[0].description as string)}</h3>
             <h3 className="text-items-start p-2 rounded"><strong>Temperatura Mínima </strong>{weather?.main.temp_min as number}°C</h3>
             <h3 className="text-items-start p-2 rounded"><strong>Temperatura </strong>{weather?.main.temp as number}°C</h3>
