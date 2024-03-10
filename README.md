@@ -4,7 +4,13 @@ Então decidi adicionar algumas complexidades a mais, como um sistema de cadastr
 
 ## Versões 
 
-### 1.41 <=
+### v1 <=
+Projeto base, sistema de auth usando google, cadastro de endereços, pegando dados via CEP ou até passando o endereço
+
+### v1.37 <=
+Adicionando feature de mapa nos endereços
+
+### v1.41 <=
 Adicionado feature de clima, agora ao visualizar endereço é possível ver o clima dele
 
 ## Autores
