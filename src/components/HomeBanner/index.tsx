@@ -1,8 +1,13 @@
 import Image from "next/image";
 import Map from "../../assets/map.png";
 import Link from "next/link";
+import { authOptions } from '@/lib/auth'
+import { getServerSession } from "next-auth";
 
-export default function HomeBanner() {
+export default async function HomeBanner() {
+
+  const session = await getServerSession(authOptions)
+
   return (
     <Link
       className="
@@ -10,7 +15,7 @@ export default function HomeBanner() {
         flex items-center flex-col min-[1050px]:flex-row justify-center border-hite-50 bg-zinc-800 w-6/12 p-5 mt-5 mb-20 rounded
         hover:scale-[1.015] cursor-pointer duration-300
     "
-      href={"/adresses"}
+      href={session?.user ? "/adresses" : `http://localhost:3000/api/auth/signin?callbackUrl=${process.env.HOST_URL}/adresses`}
     >
       <Image
         src={Map}
