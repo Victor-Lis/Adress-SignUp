@@ -7,6 +7,7 @@ export default function AdressComponent({adress}:{adress: AdressType}) {
       className="flex justify-center items-center flex-wrap bg-white px-5 py-2 mt-2"
     >
       <div className="flex flex-col justify-center items-start mt-5 flex-1">
+        <h1 className="text-3xl text-bold text-items-start p-2 rounded">Endereço</h1>
         <h3 className="text-items-start p-2 rounded">
           <strong>Logradouro </strong>
           {adress.logradouro}
@@ -37,7 +38,7 @@ export default function AdressComponent({adress}:{adress: AdressType}) {
         </h3>
       </div>
       <iframe
-        className="flex-1 h-full min-h-[250px] max-[400px]:hidden border-black border-[1.5px]"
+        className="flex-1 h-full min-h-[250px] max-[400px]:hidden"
         id="gmap_canvas"
         src={`https://maps.google.com/maps?q=${adress.bairro}%2C+${adress.localidade}&t=&z=20&ie=UTF8&iwloc=&output=embed`}
       ></iframe>

@@ -8,8 +8,6 @@ import { redirect } from "next/navigation";
 import Button from "./components/Button";
 import { WeatherType } from "@/@types/WeatherType";
 
-import { MdOutlineSubtitles } from "react-icons/md";
-import { FaTemperatureArrowDown, FaTemperatureArrowUp, FaTemperatureHalf } from "react-icons/fa6";
 import Header from "./components/Header";
 import { AdressType } from "@/@types/AdressType";
 import AdressComponent from "./components/AdressComponent";
