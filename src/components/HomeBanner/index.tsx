@@ -15,7 +15,7 @@ export default async function HomeBanner() {
         flex items-center flex-col min-[1050px]:flex-row justify-center border-hite-50 bg-zinc-800 w-6/12 p-5 mt-5 mb-20 rounded
         hover:scale-[1.015] cursor-pointer duration-300
     "
-      href={session?.user ? "/adresses" : `http://localhost:3000/api/auth/signin?callbackUrl=${process.env.HOST_URL}/adresses`}
+      href={session?.user ? "/adresses" : `${process.env.HOST_URL}/api/auth/signin?callbackUrl=${process.env.HOST_URL}/adresses`}
     >
       <Image
         src={Map}
