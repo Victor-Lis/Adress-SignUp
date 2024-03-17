@@ -1,5 +1,6 @@
 import { AdressType } from "@/@types/AdressType";
 import { FinanceType } from "@/@types/FinanceType";
+import { RiMoneyDollarBoxFill, RiMoneyEuroBoxFill } from "react-icons/ri";
 
 export default async function FinanceComponent({adress}:{adress: AdressType}) {
   async function getDatas() {
@@ -24,5 +25,28 @@ export default async function FinanceComponent({adress}:{adress: AdressType}) {
 
   const result = await getDatas();
 
-  return <div></div>;
+  return (
+  <div
+      style={{ borderBottomLeftRadius: 10, borderBottomRightRadius: 10 }}
+      className="flex flex-col bg-white px-5 py-2 justify-center items-start flex-1"
+    >
+      <h1 className="text-3xl text-bold text-items-start rounded px-2">Finanças</h1>
+      <div className="flex justify-center items-center flex-wrap">
+        <div className="flex flex-wrap justify-center items-start flex-1">
+          <div className="flex items-center justify-center mx-2">
+            <RiMoneyDollarBoxFill size={25} color="#128312" className="mx-1" />
+            <h3 className="text-items-start py-2 rounded">
+              <strong>Dolar Real </strong>R${result?.data.trends.find(trend => trend.from_symbol === 'USD')?.previous_close}
+            </h3>
+          </div>
+          <div className="flex items-center justify-center mx-2">
+            <RiMoneyEuroBoxFill size={25} color="#128312" className="mx-1" />
+            <h3 className="text-items-start py-2 rounded">
+              <strong>Euro Real </strong>R${result?.data.trends.find(trend => trend.from_symbol === 'EUR')?.previous_close}
+            </h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
 }
