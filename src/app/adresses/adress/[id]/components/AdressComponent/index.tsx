@@ -4,9 +4,9 @@ export default function AdressComponent({adress}:{adress: AdressType}) {
   return (
     <div
       style={{ borderTopLeftRadius: 10, borderTopRightRadius: 10 }}
-      className="flex justify-center items-center flex-wrap bg-white px-5 py-2 mt-2"
+      className="flex justify-center items-center flex-wrap bg-white px-5 pt-2 mt-2"
     >
-      <div className="flex flex-col justify-center items-start mt-5 flex-1">
+      <div className="flex flex-col justify-center items-start flex-1">
         <h1 className="text-3xl text-bold text-items-start p-2 rounded">Endereço</h1>
         <h3 className="text-items-start p-2 rounded">
           <strong>Logradouro </strong>

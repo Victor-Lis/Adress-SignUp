@@ -14,7 +14,7 @@ export default function WeatherComponent({
 }) {
   return (
     <div
-      className="flex flex-col bg-white px-5 py-2 justify-center items-start flex-1"
+      className="flex flex-col bg-white px-5 pt-2 justify-center items-start flex-1"
     >
       <h1 className="text-3xl text-bold text-items-start rounded px-2">Clima</h1>
       <div className="flex justify-center items-center flex-wrap">
