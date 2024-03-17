@@ -34,16 +34,14 @@ export default async function FinanceComponent({adress}:{adress: AdressType}) {
       <div className="flex justify-center items-center flex-wrap">
         <div className="flex flex-wrap justify-center items-start flex-1">
           <div className="flex items-center justify-center mx-2">
-            <RiMoneyDollarBoxFill size={25} color="#128312" className="mx-1" />
-            <h3 className="text-items-start py-2 rounded">
-              <strong>Dolar Real </strong>R${result?.data.trends.find(trend => trend.from_symbol === 'USD')?.previous_close}
-            </h3>
+            <RiMoneyDollarBoxFill size={35} color="#128312"/>
+            <h2 className="mr-2 font-bold ">Real Dollar</h2>
+            <h4 className="">R${result?.data.trends.find(trend => trend.from_symbol === 'USD')?.previous_close}</h4>
           </div>
           <div className="flex items-center justify-center mx-2">
-            <RiMoneyEuroBoxFill size={25} color="#128312" className="mx-1" />
-            <h3 className="text-items-start py-2 rounded">
-              <strong>Euro Real </strong>R${result?.data.trends.find(trend => trend.from_symbol === 'EUR')?.previous_close}
-            </h3>
+            <RiMoneyEuroBoxFill size={35} color="#128312"/>
+            <h2 className="mr-2 font-bold ">Real Euro</h2>
+            <h4 className="">R${result?.data.trends.find(trend => trend.from_symbol === 'USD')?.previous_close}</h4>
           </div>
         </div>
       </div>
