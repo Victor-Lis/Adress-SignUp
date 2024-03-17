@@ -12,6 +12,7 @@ import Header from "./components/Header";
 import { AdressType } from "@/@types/AdressType";
 import AdressComponent from "./components/AdressComponent";
 import WeatherComponent from "./components/WeatherComponent";
+import FinanceComponent from './components/FinanceComponent'
 
 type Params = {
   id: string | undefined;
@@ -55,6 +56,7 @@ export default async function Adress({ params }: { params: Params }) {
         <Header adress={adress as AdressType}/>
         <AdressComponent adress={adress as AdressType}/>
         <WeatherComponent weather={weather as WeatherType | undefined}/>
+        <FinanceComponent adress={adress as AdressType}/>
         <Button id={params.id} />
       </div>
     </main>

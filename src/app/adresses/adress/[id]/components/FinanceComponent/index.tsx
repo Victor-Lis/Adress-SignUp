@@ -1,9 +1,10 @@
+import { AdressType } from "@/@types/AdressType";
 import { FinanceType } from "@/@types/FinanceType";
 
-export default async function FinanceComponent() {
+export default async function FinanceComponent({adress}:{adress: AdressType}) {
   async function getDatas() {
     const url =
-    'https://real-time-finance-data.p.rapidapi.com/market-trends?trend_type=CURRENCIES&country=br&language=pt_br';
+    `https://real-time-finance-data.p.rapidapi.com/market-trends?trend_type=CURRENCIES&country=br&language=pt_br`;
     const options = {
       method: "GET",
       headers: {
