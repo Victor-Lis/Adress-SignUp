@@ -19,7 +19,7 @@ export default async function HomeBanner() {
     >
       <Image
         src={Map}
-        alt="Ícone Robótica"
+        alt="Ícone de Mapa"
         className="w-full min-w-[250px] max-w-[250px]"
         priority
       />
