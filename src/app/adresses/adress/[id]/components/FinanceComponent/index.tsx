@@ -35,12 +35,12 @@ export default async function FinanceComponent({adress}:{adress: AdressType}) {
         <div className="flex flex-wrap justify-center items-start flex-1">
           <div className="flex items-center justify-center mx-2">
             <RiMoneyDollarBoxFill size={35} color="#128312"/>
-            <h2 className="mr-2 font-bold ">Real Dollar</h2>
+            <h2 className="mr-2 font-bold ">Real para Dollar</h2>
             <h4 className="">R${result?.data.trends.find(trend => trend.from_symbol === 'USD')?.previous_close}</h4>
           </div>
           <div className="flex items-center justify-center mx-2">
             <RiMoneyEuroBoxFill size={35} color="#128312"/>
-            <h2 className="mr-2 font-bold ">Real Euro</h2>
+            <h2 className="mr-2 font-bold ">Real para Euro</h2>
             <h4 className="">R${result?.data.trends.find(trend => trend.from_symbol === 'EUR')?.previous_close}</h4>
           </div>
         </div>
